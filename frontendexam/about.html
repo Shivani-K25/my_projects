@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>About Us - Cozy Furniture</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <style>
+        .nav-item {
+            border: 1px solid rgb(125, 121, 121);
+            border-radius: 10px;
+            margin: 15px;
+            padding-right: 5px;
+            font-size: 15px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            transition: all 0.3s ease;
+            /* Smooth transition for background and color change */
+        }
+        
+        .nav-item:hover {
+            background-color: #92cde4;
+            /* Change the background color on hover */
+            color: white;
+            /* Change text color to white */
+            border-color: #4f5c4f;
+            /* Change border color */
+        }
+        
+        .nav-item a {
+            color: inherit;
+            /* Make sure the text color changes with the hover effect */
+            text-decoration: none;
+            /* Remove underline */
+        }
+        
+        .nav-item:hover a {
+            color: white;
+            /* Change the link color to white when hovered */
+        }
+        
+        #brandname {
+            padding-left: 10px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .about-text {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .testimonial-card {
+            margin-bottom: 30px;
+        }
+        /* Styling for About Us grey box */
+        
+        .about-box {
+            background-color: #f1f1f1;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .about-box h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .about-box p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        /* Styling for the image and text layout */
+        
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        
+        .about-text-left {
+            max-width: 50%;
+        }
+        
+        .about-image {
+            max-width: 50%;
+            /* Reduced the image size */
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        /* Text inside image */
+        
+        .carousel-caption {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: white;
+        }
+        
+        .carousel-caption h5 {
+            font-size: 2rem;
+            color: black;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        
+        .carousel-caption p {
+            font-size: 1.25rem;
+            color: black;
+        }
+        
+        .carousel {
+            margin-bottom: 50px;
+        }
+        /* Set text color to black inside the carousel captions */
+        
+        .carousel-caption h2 {
+            color: black;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" id="brandname" href="#">The Cozy Corner</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup.html">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel -->
+    <div class="carousel">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/five.jpg" class="d-block w-100" id="car" alt="Cozy Living Room">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>About Our Journey</h2>
+                        <!-- Added heading here -->
+                        <h5>Stylish and Comfortable</h5>
+                        <p>Our living room furniture is designed for both comfort and style. Make your home feel like a cozy retreat.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/car4.jpg" class="d-block w-100" alt="Modern Dining Set">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Modern Dining Solutions</h5>
+                        <p>Explore our sleek dining sets, perfect for gatherings and family dinners.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/car2.jpg" class="d-block w-100" alt="Elegant Bedroom Furniture">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Elegant Bedroom Designs</h5>
+                        <p>Create a peaceful and stylish sanctuary with our range of bedroom furniture.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- About Us Section inside grey box -->
+    <div class="container">
+        <div class="about-box">
+            <div class="about-content">
+                <div class="about-text-left">
+                    <h2>About Us</h2>
+                    <p>Welcome to The Cozy Corner, where comfort meets style. Our journey began with the mission to provide high-quality, stylish furniture that transforms your house into a home. We offer a range of furniture from cozy living room sofas
+                        to elegant dining sets and peaceful bedroom designs. Our goal is to help you create a space that not only looks beautiful but feels like a retreat. Whether you're furnishing a new home or updating a room, our team is dedicated
+                        to helping you find the perfect pieces that suit your needs and tastes.</p>
+                    <p>At The Cozy Corner, we believe that the right furniture should not only be functional but also make a statement. We carefully select materials and designs that offer durability and style. Our customer service is always here to guide
+                        you, ensuring a seamless experience from selection to delivery.</p>
+                </div>
+                <img src="/image5.jpg" alt="Furniture" class="about-image" />
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-light text-center py-4">
+        <p>&copy; 2025 The Cozy Corner. All Rights Reserved.</p>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+
+</html>
