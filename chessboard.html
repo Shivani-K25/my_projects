@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.write("<table align='center' border='1'width='500', height='500'>");
+        for (j = 1; j <= 8; j++) {
+            document.write("<tr>");
+            for (i = 1; i <= 8; i++) {
+                if ((j + i) % 2 == 0) {
+                    document.write("<td bgcolor='white'></td>");
+
+                } else {
+                    document.write("<td bgcolor='black'></td>");
+
+                }
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+</body>
+
+</html>

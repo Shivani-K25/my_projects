@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image and text</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100vh;
+        }
+        
+        .container img {
+            width: 100%;
+        }
+        
+        .container .text {
+            right: 30%;
+            top: 50%;
+            position: absolute;
+            font-size: 50px;
+            color: white;
+            transform: translate(-50%, -50%);
+            font-family: Georgia, 'Times New Roman', Times, serif
+        }
+        
+        .container h4 {
+            bottom: 90%;
+            position: absolute;
+            font-size: 20px;
+            color: white;
+            font-family: monospace;
+            margin-left: 10px;
+        }
+        
+        #para2 {
+            font-size: 20px;
+            text-align: center;
+            color: rgba(250, 250, 250, 0.783);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        
+        hr {
+            color: #ffffff92;
+        }
+        
+        #para1 {
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <img src="forest.jpg" alt="background image" width="" height="1030">
+        <h4>logo</h4>
+        <div class="text">
+            <p id="para1">COMING SOON</p>
+            <hr>
+            <p id="para2">35 days left</p>
+        </div>
+    </div>
+</body>
+
+</html>
