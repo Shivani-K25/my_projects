@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stars Falling with Cloud Images</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        .box {
+            background-image: url('moon.jpg');
+            height: 100vh;
+            width: 100%;
+            background-position: center center;
+            background-size: cover;
+            position: relative;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: fall linear infinite, twinkle 3s infinite alternate;
+        }
+        
+        .cloud {
+            position: absolute;
+            background-image: url('cloud.png');
+            /* Replace with your cloud image URL or file path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            animation: moveClouds 20s linear infinite;
+            width: 200px;
+            /* Adjust the size of the cloud */
+            height: 100px;
+            /* Adjust the height of the cloud */
+        }
+        
+        @keyframes fall {
+            0% {
+                opacity: 1;
+                transform: translateY(-10px);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(100vh);
+            }
+        }
+        
+        @keyframes twinkle {
+            0% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes moveClouds {
+            0% {
+                transform: translateX(-200px);
+                /* Start from the left */
+            }
+            100% {
+                transform: translateX(100vw);
+                /* Move across the entire width */
+            }
+        }
+        /* Shooting star animation */
+        
+        @keyframes shootingStar {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) translateX(100vw) rotate(180deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="particles-js"></div>
+    <script>
+        $(document).ready(function() {
+            const numStars = 100;
+            const numClouds = 10; // Increased number of clouds
+            const boxWidth = $('.box').width();
+            const boxHeight = $('.box').height();
+
+            // Function to create falling stars
+            function createStar() {
+                const star = $('<div class="star"></div>');
+                const size = Math.random() * 10 + 5; // Star size between 5px and 15px
+                const leftPosition = Math.random() * boxWidth;
+                const animationDuration = Math.random() * 3 + 3; // Random fall speed (3s to 6s)
+
+                star.css({
+                    width: size + 'px',
+                    height: size + 'px',
+                    left: leftPosition + 'px',
+                    animationDuration: animationDuration + 's',
+                    animationDelay: Math.random() * 5 + 's',
+                });
+
+                $('.box').append(star);
+
+                setTimeout(function() {
+                    star.remove();
+                }, (animationDuration + 5) * 1000);
+            }
+
+            // Create shooting stars occasionally
+            function createShootingStar() {
+                const shootingStar = $('<div class="star"></div>');
+                const size = Math.random() * 5 + 10; // Larger size for shooting stars
+                const leftPosition = Math.random() * boxWidth;
+                const animationDuration = Math.random() * 0.5 + 0.5; // Faster fall speed for shooting stars
+
+                shootingStar.css({
+                    width: size + 'px',
+                    height: size + 'px',
+                    left: leftPosition + 'px',
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    animation: `fall 1s linear, shootingStar 1s ease-out`,
+                });
+
+                shootingStar.css({
+                    top: '-30px',
+                    animationDuration: '1s',
+                    animationDelay: Math.random() * 5 + 's',
+                });
+
+                // Shooting star animation specifically defined here
+                shootingStar.css({
+                    animation: `shootingStar 1s linear`,
+                });
+
+                $('.box').append(shootingStar);
+
+                setTimeout(function() {
+                    shootingStar.remove();
+                }, 1000);
+            }
+
+            // Create stars continuously
+            setInterval(createStar, 100); // Regular stars
+
+            // Occasionally create shooting stars
+            setInterval(createShootingStar, 3000); // Shooting stars every 3 seconds
+
+            // Create cloud images that move slowly across the screen
+            for (let i = 0; i < numClouds; i++) {
+                const cloud = $('<div class="cloud"></div>');
+                cloud.css({
+                    top: Math.random() * boxHeight / 2 + 'px', // Random vertical position
+                    left: Math.random() * boxWidth + 'px',
+                    animationDuration: Math.random() * 15 + 15 + 's', // Slow movement across the screen
+                });
+
+                $('.box').append(cloud);
+            }
+        });
+    </script>
+</body>
+
+</html>
