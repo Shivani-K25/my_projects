@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <style>
+        form {
+            padding-left: 30px;
+        }
+        
+        #table {
+            color: rgb(145, 7, 16);
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .fn {
+            border: 3px solid rgb(244, 5, 132);
+            padding-right: 50%;
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+        
+        .addr {
+            border: 3px solid rgb(244, 5, 132);
+            padding-right: 34%;
+            padding-left: 10px;
+        }
+        
+        .phone {
+            border: 3px solid rgb(244, 5, 132);
+            padding-right: 120px;
+            padding-bottom: 10px;
+        }
+        
+        .phon {
+            padding-left: 10px;
+            padding-bottom: 10px;
+            border: 3px solid black;
+        }
+        
+        .pinn {
+            padding-right: 50%;
+            border: 3px solid rgb(244, 5, 132);
+            padding-bottom: 10px;
+        }
+        
+        .state {
+            padding-right: 55%;
+            border: 3px solid rgb(244, 5, 132);
+            padding-bottom: 10px;
+        }
+        
+        .dob {
+            padding-right: 64%;
+            border: 3px solid rgb(244, 5, 132);
+            padding-bottom: 10px;
+        }
+        
+        .hby {
+            padding-top: 20px;
+        }
+        
+        .max {
+            color: rgba(232, 18, 18, 0.634);
+            padding-left: 15%;
+        }
+        
+        label {
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        
+        input,
+        select,
+        textarea {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" name="myform" onsubmit="return validate()">
+        <table id="table">
+
+            <h2 style="color: rgb(244, 5, 132);">STUDENT REGISTRATION FORM</h2>
+
+            <tr>
+                <td><label for="fn" id="fn">First Name</label></td>
+                <td><input type="text" id="fn" name="fname" class="fn" placeholder="Enter your first name" required><br><br></td>
+            </tr>
+            <tr>
+                <td><label for="ln">Last Name</label></td>
+                <td><input type="text" id="ln" class="fn" name="lname" placeholder="Enter your last name" required><br><br></td>
+            </tr>
+            <tr>
+                <td><label for="gender">Gender</label></td>
+                <td>
+                    <input type="radio" id="m" name="gender" value="Male">
+                    <label for="m">Male</label>
+                    <input type="radio" id="f" name="gender" value="Female">
+                    <label for="f">Female</label><br><br>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="ag">Age</label></td>
+                <td><input type="text" id="ag" class="fn" name="age" placeholder="Enter your age" required><br><br></td>
+            </tr>
+            <tr>
+                <td><label for="d">Date of Birth</label></td>
+                <td><input type="date" class="dob" id="d" name="birth" required><br><br></td>
+            </tr>
+            <tr>
+                <td><label for="em">Email Address</label></td>
+                <td><input type="email" id="em" class="fn" name="mail" placeholder="Enter your email" required><br><br></td>
+            </tr>
+            <tr>
+                <td><label for="pwd">Password</label></td>
+                <td><input type="password" id="pwd" class="fn" name="password" placeholder="Enter your password (min 8 characters)" required><br><br></td>
+            </tr>
+            <tr>
+                <td><label for="cpwd">Confirm Password</label></td>
+                <td><input type="password" id="cpwd" name="confirmPassword" class="fn" placeholder="Confirm your password" required><br><br></td>
+            </tr>
+            <tr>
+                <td><label for="phn">Phone Number</label ></td>
+                <td>
+                    <select name="ph" id="phn" class="phon" required>
+                        <option value="+91">+91</option>
+                        <option value="+44">+44</option>
+                        <option value="+01">+01</option>
+                        <option value="+22">+22</option>
+                        <option value="+091">+091</option>
+                    </select>
+                    <input type="text" class="phone" id="phn" name="ph" placeholder="Enter your phone number" required><br><br>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="ad">Address</label></td>
+                <td><textarea id="ad" class="addr" name="adress" placeholder="Enter your address" rows="5" cols="30" required></textarea><br><br></td>
+            </tr>
+            <tr>
+                <td><label for="st">State</label></td>
+                <td>
+                    <select class="state" name="Sts" id="st" value="state" required>
+                        <option value="K">Kerala</option>
+                        <option value="G">Gujarat</option>
+                        <option value="T">Tamil Nadu</option>
+                        <option value="A">Assam</option>
+                        <option value="Up">Uttar Pradesh</option>
+                    </select><br><br>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="pin">Pin Code</label></td>
+                <td><input type="number" class="pinn" id="pin" name="pin" placeholder="Enter your pincode" required><br><br></td>
+            </tr>
+            <tr>
+                <td><label for="hobbies">Hobbies</label></td>
+                <td class="hby">
+                    <input type="checkbox" id="mu" value="Music">
+                    <label style="padding-right: 20px;" for="mu">Music</label>
+                    <input type="checkbox" id="mo" value="Movies">
+                    <label for="mo" style="padding-right: 20px;">Movies</label>
+                    <input type="checkbox" id="sp" value="Sports">
+                    <label for="sp" style="padding-right: 20px;">Sports</label>
+                    <input type="checkbox" id="tv" value="Travel">
+                    <label for="tv" style="padding-right: 20px;">Travel</label><br><br>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="up">Upload Photo</label></td>
+                <td class="max"><small>*Max Size <br>100KB</small></td>
+                <td class="file"><input type="file" name="up"></td>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" id="declare" required>
+                    <label for="declare" style="color: black;font-size:15px;padding-left:14px;">I hereby declare that the above information provided is true and correct.</label><br><br>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <button type="submit">Register</button>
+                </th>
+                <th>
+                    <button type="reset">Reset</button>
+                </th>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function validate() {
+            var namePattern = /^[A-Za-z]+(['-]?[A-Za-z]+)*$/;
+
+            // Validate First Name
+            let x = document.forms['myform']['fname'].value;
+            if (x == "") {
+                window.alert("First name cannot be empty!");
+                return false; // Prevent form submission
+            } else if (!namePattern.test(x)) {
+                window.alert("First Name cannot have numbers or special characters other than apostrophes and hyphens.");
+                return false;
+            }
+
+            // Validate Last Name
+            let y = document.forms['myform']['lname'].value;
+            if (y == "") {
+                window.alert("Last name cannot be empty!");
+                return false; // Prevent form submission
+            } else if (!namePattern.test(y)) {
+                window.alert("Last Name cannot have numbers or special characters other than apostrophes and hyphens.");
+                return false;
+            }
+
+            // Validate Gender
+            let gender = document.forms['myform']['gender'];
+            let isGenderSelected = false;
+            for (let i = 0; i < gender.length; i++) {
+                if (gender[i].checked) {
+                    isGenderSelected = true;
+                    break;
+                }
+            }
+            if (!isGenderSelected) {
+                window.alert("Please select your gender.");
+                return false; // Prevent form submission
+            }
+
+            // Validate Age
+            let age = document.forms['myform']['age'].value;
+            if (age == "" || isNaN(age)) {
+                window.alert("Please enter a valid age.");
+                return false; // Prevent form submission
+            }
+            if (age < 18 || age > 100) {
+                window.alert("Age must be between 18 and 100.");
+                return false; // Prevent form submission
+            }
+
+            // Validate Date of Birth
+            let dob = document.forms['myform']['birth'].value;
+            if (dob == "") {
+                window.alert("Date of Birth cannot be empty!");
+                return false; // Prevent form submission
+            }
+
+            // Validate Email Address
+            let email = document.forms['myform']['mail'].value;
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (email == "") {
+                window.alert("Email cannot be empty!");
+                return false; // Prevent form submission
+            } else if (!emailPattern.test(email)) {
+                window.alert("Please enter a valid email address!");
+                return false; // Prevent form submission
+            }
+
+            // Validate Password
+            let password = document.forms['myform']['password'].value;
+            let confirmPassword = document.forms['myform']['confirmPassword'].value;
+            const upperCasePattern = /[A-Z]/;
+            const lowerCasePattern = /[a-z]/;
+            const numberPattern = /[0-9]/;
+            const specialCharPattern = /[!@#$%^&*(),.?":{}|<>]/;
+
+            if (password.length < 8) {
+                window.alert("Password must be at least 8 characters long.");
+                return false; // Prevent form submission
+            }
+
+            if (!upperCasePattern.test(password)) {
+                window.alert("Password must contain at least one uppercase letter.");
+                return false; // Prevent form submission
+            }
+
+            if (!lowerCasePattern.test(password)) {
+                window.alert("Password must contain at least one lowercase letter.");
+                return false; // Prevent form submission
+            }
+
+            if (!numberPattern.test(password)) {
+                window.alert("Password must contain at least one number.");
+                return false; // Prevent form submission
+            }
+
+            if (!specialCharPattern.test(password)) {
+                window.alert("Password must contain at least one special character.");
+                return false; // Prevent form submission
+            }
+
+            // Confirm password validation (checks if it matches the password)
+            if (password !== confirmPassword) {
+                window.alert("Passwords do not match.");
+                return false; // Prevent form submission
+            }
+
+            // Validate Phone Number
+            let phone = document.forms['myform']['ph'].value;
+            let phoneNumber = phone + document.forms['myform']['phone'].value;
+            if (phoneNumber == "" || phoneNumber.length < 10) {
+                window.alert("Please enter a valid phone number.");
+                return false; // Prevent form submission
+            }
+
+            // Validate Address
+            let address = document.forms['myform']['adress'].value;
+            if (address == "") {
+                window.alert("Address cannot be empty!");
+                return false; // Prevent form submission
+            }
+
+            // Validate State
+            let state = document.forms['myform']['Sts'].value;
+            if (state == "") {
+                window.alert("Please select your state.");
+                return false; // Prevent form submission
+            }
+
+            // Validate Pin Code
+            let pin = document.forms['myform']['pin'].value;
+            if (pin == "" || pin.length != 6) {
+                window.alert("Please enter a valid pin code (6 digits).");
+                return false; // Prevent form submission
+            }
+
+            // Validate Hobbies (at least one hobby must be selected)
+            let hobbies = document.querySelectorAll('input[type="checkbox"]:checked');
+            if (hobbies.length == 0) {
+                window.alert("Please select at least one hobby.");
+                return false; // Prevent form submission
+            }
+
+            // Validate Upload Photo
+            let file = document.getElementById('up').files[0];
+            if (file && file.size > 102400) {
+                window.alert("Upload a file that is smaller than 100KB.");
+                return false; // Prevent form submission
+            }
+
+            // Validate Declaration
+            let declaration = document.getElementById('declare').checked;
+            if (!declaration) {
+                window.alert("You must declare that the information provided is true.");
+                return false; // Prevent form submission
+            }
+
+            // If all validations pass, submit the form
+            return true; // Form is submitted
+        }
+    </script>
+
+
+
+</body>
+
+</html>
